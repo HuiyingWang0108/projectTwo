@@ -1,0 +1,84 @@
+{{!--
+<!doctype html>
+<html>
+
+<head>
+    <title>Post Baby Used Item</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head> --}}
+
+{{!--
+
+<body> --}}
+    {{!-- <div class="container">
+        <div class="col-sm-12 col-sm-offset-3"> --}}
+            <header class="global-header wide">
+
+                <nav class="navbar navbar-light bg-light">
+                    <ul class="nav justify-content-left">
+                        <li class="nav-item">
+                            <img src="/img/baby.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+                        </li>
+                        <li class="nav-item">
+                            <p class="vertical-center" id="testId">seattle<span class="breadcrumb-arrow">&gt;</span></p>
+                        </li>
+                    </ul>
+                    <ul class="nav justify-content-end">
+                        {{#if condition.isNotLogin}}
+                        <li class="nav-item">
+                            <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
+                        </li>
+                        {{else}}
+                        <li class="nav-item">
+                            <p>[ logged in as <strong><a href="/createpost">{{user.username}}</a></strong>]</p>
+                        </li>
+                        <li class="nav-item">
+                            <p>[ <a href="/logout">log out</a>]</p>
+                        </li>
+                        {{/if}}
+                    </ul>
+                </nav>
+
+            </header>
+            <div class="container">
+                <div class="col-sm-12 col-sm-offset-3">
+                    <section class="body">
+
+                        <p class="formnote"><b>choose the location that fits best:</b></p>
+
+                        <form class="picker" action="/api/createpost" method="post">
+                            {{!-- action="/api/createpost" method="post" --}}
+                            <ul class="selection-list">
+                                <li><label><input class="location" type="radio" name="location" value="1">seattle</label></li>
+                                <li><label><input class="location" type="radio" name="location" value="2">eastside</label></li>
+                                <li><label><input class="location" type="radio" name="location" value="3">snohomish
+                                        county</label></li>
+                                <li><label><input class="location" type="radio" name="location" value="4">kitsap / west
+                                        puget</label></li>
+                                <li><label><input class="location" type="radio" name="location" value="5">tacoma /
+                                        pierce</label></li>
+                                <li><label><input class="location" type="radio" name="location" value="6">olympia /
+                                        thurston</label></li>
+                                <li><label><input class="location" type="radio" name="location" value="7">south king co</label></li>
+                            </ul>
+                            <button class="locationBtn" type="submit" name="go" value="Continue">continue</button>
+                        </form>
+
+
+                    </section>
+                </div>
+            </div>
+
+            {{!--
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            --}}
+            <script src="/js/createpost.js"></script>
+            {{!-- </body>
+
+
+</html> --}}

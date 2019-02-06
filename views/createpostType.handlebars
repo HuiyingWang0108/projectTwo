@@ -1,0 +1,100 @@
+{{!--
+<!doctype html>
+<html>
+
+<head>
+    <title>Post Baby Used Item</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body> --}}
+    {{!-- <article class="page-container"> --}}
+
+        <header class="global-header wide">
+
+            <nav class="navbar navbar-light bg-light">
+                {{!-- <a class="navbar-brand" href="#">
+                    <img src="/img/baby.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+                    <p>seattle<span class="breadcrumb-arrow">&gt;</span></p>
+                </a> --}}
+                <ul class="nav justify-content-left">
+                    <li class="nav-item">
+                        <img src="/img/baby.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+                    </li>
+                    <li class="nav-item">
+                        <p class="vertical-center">seattle<span class="breadcrumb-arrow">&gt;</span></p>
+                    </li>
+                    <li>
+                        <p class="vertical-center" id="locationHeader"><span class="breadcrumb-arrow">&gt;</span></p>
+                    </li>
+                </ul>
+                <ul class="nav justify-content-end">
+                    {{#if condition.isNotLogin}}
+                    <li class="nav-item">
+                        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
+                    </li>
+                    {{else}}
+                    <li class="nav-item">
+                        <p>[ logged in as <strong><a href="/createpost">{{user.username}}</a></strong>]</p>
+                    </li>
+                    <li class="nav-item">
+                        <p>[ <a href="/logout">log out</a>]</p>
+                    </li>
+                    {{/if}}
+                </ul>
+            </nav>
+
+        </header>
+        <div class="container">
+            <div class="col-sm-12 col-sm-offset-3">
+                <section class="body">
+
+
+                    <form class="picker" action="api/createpostType" method="post">
+                        <p class="formnote"><b>what type of posting is this:</b>(see <a href="https://www.craigslist.org/about/prohibited">prohibited</a>
+                            list before posting.)</p>
+                        <ul class="selection-list">
+                            <li><label><input type="radio" name="n" value="1">for sale by owner</label></li>
+                            <li><label><input type="radio" name="n" value="2">wanted by owner</label></li>
+                        </ul>
+                        <p class="formnote">
+                            <b>please choose a category:</b>
+                            (see <a href="https://www.craigslist.org/about/prohibited">prohibited</a> list and <a href="https://www.craigslist.org/about/recalled_items">recall
+                                information</a> before posting.)
+                        </p>
+                        <ul class="selection-list">
+                            <li><label><input type="radio" name="category" value="1">furniture</label></li>
+                            <li><label><input type="radio" name="category" value="2">toys</label></li>
+                            <li><label><input type="radio" name="category" value="3">travel set</label></li>
+                            <li><label><input type="radio" name="category" value="4">clothes</label></li>
+                            <li><label><input type="radio" name="category" value="5">nursing goods</label></li>
+                        </ul>
+                        {{!-- <p class="formnote">
+                            <b>please note:</b>
+                            your posting will also appear on the main <b>seattle-tacoma</b> site.
+                            <br style="clear:both;">
+                        </p> --}}
+                        {{!-- <input type="hidden" name="cryptedStepCheck" value="U2FsdGVkX184NDQ1ODQ0NfnxYDJlMNEe6jSs_6KFAKCs-rrv9pCJFxkqklOV8RHZEjUBhSSM06M">
+                        --}}
+                        <button class="categoryBtn" type="submit" name="go" value="Continue">continue</button>
+                    </form>
+
+
+                </section>
+            </div>
+        </div>
+
+        {{!--
+    </article> --}}
+
+    {{!--
+    <script src="/js/createpost.js"></script> --}}
+    {{!-- </body>
+
+
+</html> --}}
