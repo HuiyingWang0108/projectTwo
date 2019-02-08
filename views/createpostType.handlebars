@@ -27,7 +27,7 @@
                         <p class="vertical-center">seattle<span class="breadcrumb-arrow">&gt;</span></p>
                     </li>
                     <li>
-                        <p class="vertical-center" id="locationHeader"><span class="breadcrumb-arrow">&gt;</span></p>
+                        <p class="vertical-center" id="locationHeader"> <span class="breadcrumb-arrow">&gt;</span></p>
                     </li>
                 </ul>
                 <ul class="nav justify-content-end">
@@ -40,7 +40,7 @@
                     </li>
                     {{else}}
                     <li class="nav-item">
-                        <p>[ logged in as <strong><a href="/createpost">{{user.username}}</a></strong>]</p>
+                        <p>[ logged in as <strong><a href="/postItem">{{user.username}}</a></strong>]</p>
                     </li>
                     <li class="nav-item">
                         <p>[ <a href="/logout">log out</a>]</p>
@@ -50,17 +50,18 @@
             </nav>
 
         </header>
-        <div class="container">
+        <div class="container" id="indexContainer">
             <div class="col-sm-12 col-sm-offset-3">
                 <section class="body">
 
 
-                    <form class="picker" action="api/createpostType" method="post">
+                    <form class="picker" action="createpostInfo">
+                        {{!-- action="api/createpostType" method="post" --}}
                         <p class="formnote"><b>what type of posting is this:</b>(see <a href="https://www.craigslist.org/about/prohibited">prohibited</a>
                             list before posting.)</p>
                         <ul class="selection-list">
-                            <li><label><input type="radio" name="n" value="1">for sale by owner</label></li>
-                            <li><label><input type="radio" name="n" value="2">wanted by owner</label></li>
+                            <li><label><input type="radio" name="typeNam" value="for sale by owner">for sale by owner</label></li>
+                            <li><label><input type="radio" name="typeNam" value="wanted by owner">wanted by owner</label></li>
                         </ul>
                         <p class="formnote">
                             <b>please choose a category:</b>
@@ -68,20 +69,13 @@
                                 information</a> before posting.)
                         </p>
                         <ul class="selection-list">
-                            <li><label><input type="radio" name="category" value="1">furniture</label></li>
-                            <li><label><input type="radio" name="category" value="2">toys</label></li>
-                            <li><label><input type="radio" name="category" value="3">travel set</label></li>
-                            <li><label><input type="radio" name="category" value="4">clothes</label></li>
-                            <li><label><input type="radio" name="category" value="5">nursing goods</label></li>
+                            <li><label><input type="radio" name="categoryNam" value="furniture">furniture</label></li>
+                            <li><label><input type="radio" name="categoryNam" value="toys">toys</label></li>
+                            <li><label><input type="radio" name="categoryNam" value="travel set">travel set</label></li>
+                            <li><label><input type="radio" name="categoryNam" value="clothes">clothes</label></li>
+                            <li><label><input type="radio" name="categoryNam" value="nursing goods">nursing goods</label></li>
                         </ul>
-                        {{!-- <p class="formnote">
-                            <b>please note:</b>
-                            your posting will also appear on the main <b>seattle-tacoma</b> site.
-                            <br style="clear:both;">
-                        </p> --}}
-                        {{!-- <input type="hidden" name="cryptedStepCheck" value="U2FsdGVkX184NDQ1ODQ0NfnxYDJlMNEe6jSs_6KFAKCs-rrv9pCJFxkqklOV8RHZEjUBhSSM06M">
-                        --}}
-                        <button class="categoryBtn" type="submit" name="go" value="Continue">continue</button>
+                        <button class="typeBtn" type="submit" name="go" value="Continue">continue</button>
                     </form>
 
 
@@ -91,9 +85,8 @@
 
         {{!--
     </article> --}}
-
-    {{!--
-    <script src="/js/createpost.js"></script> --}}
+    <script src="/js/createpost.js"></script>
+    <script src="/js/createpostType.js"></script>
     {{!-- </body>
 
 

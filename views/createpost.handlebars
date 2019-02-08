@@ -35,7 +35,7 @@
                         </li>
                         {{else}}
                         <li class="nav-item">
-                            <p>[ logged in as <strong><a href="/createpost">{{user.username}}</a></strong>]</p>
+                            <p>[ logged in as <strong><a href="/postItem">{{user.username}}</a></strong>]</p>
                         </li>
                         <li class="nav-item">
                             <p>[ <a href="/logout">log out</a>]</p>
@@ -45,26 +45,22 @@
                 </nav>
 
             </header>
-            <div class="container">
+            <div class="container" id="indexContainer">
                 <div class="col-sm-12 col-sm-offset-3">
                     <section class="body">
 
                         <p class="formnote"><b>choose the location that fits best:</b></p>
 
-                        <form class="picker" action="/api/createpost" method="post">
+                        <form id="locationForm" action="createpostType.handlebars">
                             {{!-- action="/api/createpost" method="post" --}}
                             <ul class="selection-list">
-                                <li><label><input class="location" type="radio" name="location" value="1">seattle</label></li>
-                                <li><label><input class="location" type="radio" name="location" value="2">eastside</label></li>
-                                <li><label><input class="location" type="radio" name="location" value="3">snohomish
-                                        county</label></li>
-                                <li><label><input class="location" type="radio" name="location" value="4">kitsap / west
-                                        puget</label></li>
-                                <li><label><input class="location" type="radio" name="location" value="5">tacoma /
-                                        pierce</label></li>
-                                <li><label><input class="location" type="radio" name="location" value="6">olympia /
-                                        thurston</label></li>
-                                <li><label><input class="location" type="radio" name="location" value="7">south king co</label></li>
+                                <li><label><input class="location" type="radio" name="locationNam" value="seattle">seattle</label></li>
+                                <li><label><input class="location" type="radio" name="locationNam" value="eastside">eastside</label></li>
+                                <li><label><input class="location" type="radio" name="locationNam" value="snohomish county">snohomish county</label></li>
+                                <li><label><input class="location" type="radio" name="locationNam" value="kitsap /west puget">kitsap /west puget</label></li>
+                                <li><label><input class="location" type="radio" name="locationNam" value="tacoma /pierce">tacoma /pierce</label></li>
+                                <li><label><input class="location" type="radio" name="locationNam" value="olympia /thurston">olympia /thurston</label></li>
+                                <li><label><input class="location" type="radio" name="locationNam" value="south king co">south king co</label></li>
                             </ul>
                             <button class="locationBtn" type="submit" name="go" value="Continue">continue</button>
                         </form>
